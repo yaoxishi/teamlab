@@ -8,7 +8,7 @@ responses do not replace evidence from human studies.
 
 ## Use the website
 
-Open **[TeamLab](https://teamlab-prototype.streamlit.app/)**. No installation is needed.
+Open **[TeamLab](https://teamlab-prototype.streamlit.app/?embed=true)**. No installation is needed.
 
 1. Click **Connect private workspace** and wait for the connected message.
 2. Create a study, import a saved YAML setup, or load an example:
