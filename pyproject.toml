@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools==84.0.0", "wheel==0.48.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "teamlab"
+version = "0.1.0"
+description = "Local LLM conversation research simulation"
+readme = "README.md"
+license = "MIT AND LicenseRef-ANES-Conditions"
+license-files = ["LICENSE", "DATA_TERMS.md"]
+requires-python = ">=3.12"
+dependencies = [
+  "streamlit==1.65.0", "litellm==1.82.6", "openai==2.26.0",
+  "pydantic==2.13.5", "PyYAML==6.0.3", "pandas==3.0.5",
+  "openpyxl==3.1.5", "filelock==4.0.12",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==9.1.1"]
+
+[tool.setuptools.packages.find]
+include = ["convolab*", "grouplab*", "teamlab*"]
+
+[tool.setuptools.package-data]
+convolab = ["data/*.csv", "data/examples/*.yaml", "hosted/assets/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

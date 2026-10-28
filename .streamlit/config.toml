@@ -1,0 +1,13 @@
+# Copy into the reviewed hosted repository only; local app settings stay intact.
+[browser]
+gatherUsageStats = false
+
+[server]
+maxUploadSize = 5
+fileWatcherType = "none"
+
+[client]
+showErrorDetails = "none"
+
+[theme]
+baseFontSize = 16

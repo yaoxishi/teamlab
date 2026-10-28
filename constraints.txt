@@ -1,0 +1,3 @@
+# Exclude the compromised PyPI releases before dependency resolution/download.
+# Exact versions and SHA-256 artifact hashes will be supplied in requirements.lock.
+litellm!=1.82.7,!=1.82.8

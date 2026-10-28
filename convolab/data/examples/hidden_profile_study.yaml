@@ -1,0 +1,99 @@
+study_name: hidden_profile_demo
+task_instructions: |
+  You are a three-person hiring committee choosing between two candidates,
+  Candidate A and Candidate B, for a project manager role. Each of you has
+  read different notes about the candidates. Discuss and try to agree on one.
+agents:
+  - model: mock    # no display_name: a name matching the persona's gender is picked each run
+    ideology: liberal
+    age: 34
+    race_ethnicity: White
+    gender: woman
+    education: "a bachelor's degree"
+    party: a Democrat
+    openness: 4.2
+    conscientiousness: 3.8
+    extraversion: 4.5
+    agreeableness: 2.6
+    neuroticism: 2.0
+    role_instructions: "Your notes say Candidate A led two successful product launches."
+  - model: mock
+    ideology: conservative
+    age: 52
+    race_ethnicity: Black
+    gender: man
+    education: "a master's degree"
+    party: a Republican
+    openness: 2.9
+    conscientiousness: 4.4
+    extraversion: 2.1
+    agreeableness: 4.6
+    neuroticism: 3.3
+    role_instructions: "Your notes say Candidate B is excellent at resolving team conflicts."
+  - model: mock
+    ideology: moderate
+    age: 27
+    race_ethnicity: Hispanic
+    gender: nonbinary
+    education: a high school diploma
+    party: an Independent
+    # no Big Five scores: personality is optional
+    role_instructions: "Your notes say Candidate A missed several deadlines last year."
+run:
+  n_runs: 3
+  max_turns: 12
+  speaker_order: [1, 2, 3]
+  measure_every_n_turns: 1
+  remember_pre_survey: false
+  silence_visibility: public
+  survey_max_tokens: 1000
+  private_state: true
+  state_max_tokens: 1200
+  seed: 42
+items:
+  - item_id: trust_1
+    scale: Trust
+    text: "I trust the other members of this group."
+    type: likert
+    min: 1
+    max: 7
+    min_label: "Strongly disagree"
+    max_label: "Strongly agree"
+    pre: true
+    turn: true
+    post: true
+  - item_id: pref_1
+    scale: Preference
+    text: "How strongly do you prefer Candidate A over Candidate B?"
+    type: likert
+    min: 1
+    max: 7
+    min_label: "Strongly prefer B"
+    max_label: "Strongly prefer A"
+    pre: true
+    turn: true
+    post: true
+  - item_id: reflect_1
+    scale: Reflection
+    text: "In a sentence or two, how did the discussion go for you?"
+    type: text
+    pre: false
+    turn: false
+    post: true
+# Optional top-level keys, defaults used when omitted:
+# survey_instructions: {pre: ..., turn: ..., post: ...}
+# prompt_templates: {system: ..., main_user: ..., survey_user: ..., private_state_block: ...,
+#                    state_guidance: ..., state_init_user: ..., state_update_user: ...,
+#                    state_response_instruction: ..., main_state_guidance: ..., survey_state_guidance: ...}
+# persona_source: custom         # default custom; builtin uses the built-in ANES 2016 persona dataset
+# persona_mode: pool             # default fixed; in pool mode agents omit persona fields
+# persona_pool:                  # custom pool only; omit with persona_source: builtin
+#   - {persona_id: P001, ideology: liberal, age: 34, race_ethnicity: White, gender: woman, education: "a bachelor's degree", party: a Democrat, openness: 4.2}
+#   - ...
+#
+# Built-in fixed personas: each agent names one built-in row and omits all other persona fields:
+# persona_source: builtin
+# persona_mode: fixed
+# agents:
+#   - {model: mock, persona_id: "2", role_instructions: "..."}
+#   - {model: mock, persona_id: "5", role_instructions: "..."}

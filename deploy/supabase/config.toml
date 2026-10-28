@@ -1,0 +1,6 @@
+# Handlers perform authoritative getUser/live-session checks or a separate Cron
+# secret. Relay JWT decoding is not used as the authorization boundary.
+[functions.private-download]
+verify_jwt = false
+[functions.cleanup]
+verify_jwt = false

@@ -1,0 +1,9 @@
+# TEMPLATE ONLY. Paste real values directly into the private Streamlit service
+# settings; never save them in this repository or send them through chat.
+# Keep both flags off until the Stage 6 service prerequisites are verified.
+CONVOLAB_SUPABASE_URL = "https://YOUR_PROJECT_REF.supabase.co"
+CONVOLAB_SUPABASE_PUBLISHABLE_KEY = "YOUR_PUBLIC_SUPABASE_KEY"
+CONVOLAB_SUPABASE_SECRET_KEY = "YOUR_PRIVATE_SUPABASE_SERVICE_KEY"
+CONVOLAB_TURNSTILE_SITE_KEY = "YOUR_PUBLIC_TURNSTILE_SITE_KEY"
+CONVOLAB_HOSTED_SIGNUP_ENABLED = "0"
+CONVOLAB_HOSTED_EXECUTION_ENABLED = "0"

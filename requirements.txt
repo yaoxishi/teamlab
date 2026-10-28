@@ -1,0 +1,5 @@
+# Hosted Linux CPython 3.12 installer; local Windows uses requirements.lock.
+--require-hashes
+--only-binary=:all:
+-c constraints.txt
+-r requirements-linux.lock

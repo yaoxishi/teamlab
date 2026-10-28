@@ -1,0 +1,119 @@
+study_name: receptiveness_campus_control
+task_instructions: 'You are having a text conversation with another person about the
+  following statement:
+
+
+  “When a sexual assault accusation is made on a college campus, the alleged perpetrator
+  should be immediately removed from campus to protect the victim’s well-being.”
+
+
+  Discuss the issue from your own point of view. When responding, address what the
+  other person actually wrote. Write only the message you would send directly to that
+  person.'
+persona_source: builtin
+persona_mode: pool
+agents:
+- display_name: Participant A
+  model: mock
+  temperature: 1.0
+  max_tokens: 400
+  role_instructions: 'At the start of this conversation, you strongly agree with the
+    statement in the task instructions.
+
+
+    On your first speaking opportunity, send the statement exactly as written, without
+    quotation marks or additional text. This is your opening expression of your view.
+
+
+    When you speak again, read your partner’s response and write what you would naturally
+    say next. Respond to the specific points they raised. Your initial position is
+    strong agreement, but you may reconsider aspects of your view if their response
+    gives you reason to do so.'
+- display_name: Participant B
+  model: mock
+  temperature: 1.0
+  max_tokens: 400
+  role_instructions: 'At the start of this conversation, you strongly disagree with
+    the statement in the task instructions. You will respond to the person who wrote
+    the opening message.
+
+
+    Imagine that you are having an online conversation with this person. How would
+    you respond?'
+run:
+  n_runs: 1
+  max_turns: 3
+  speaker_order:
+  - 1
+  - 2
+  shuffle_order_each_run: false
+  allow_pass: false
+  silence_visibility: public
+  measure_every_n_turns: 1
+  allow_early_end: false
+  remember_pre_survey: false
+  randomize_item_order: true
+  inner_reaction: false
+  private_state: false
+  state_max_tokens: 1200
+  survey_max_tokens: 1000
+  seed: 20261027
+items:
+- item_id: ci_team
+  scale: Collaboration intention
+  text: How much would you like to have your discussion partner on a work team?
+  type: likert
+  min: 1
+  max: 7
+  min_label: Strongly dislike
+  max_label: Strongly like
+  pre: false
+  turn: true
+  post: false
+- item_id: ci_judgment
+  scale: Collaboration intention
+  text: How much do you trust your discussion partner’s professional judgment?
+  type: likert
+  min: 1
+  max: 7
+  min_label: Strongly distrust
+  max_label: Strongly trust
+  pre: false
+  turn: true
+  post: false
+- item_id: ci_represent
+  scale: Collaboration intention
+  text: How much would you like your discussion partner to represent your organization
+    in a professional context?
+  type: likert
+  min: 1
+  max: 7
+  min_label: Strongly dislike
+  max_label: Strongly like
+  pre: false
+  turn: true
+  post: false
+# Yeomans et al. (2020), Appendix E, Receptiveness of partner, item 1.
+- item_id: rec_opposing_views
+  scale: Perceived receptiveness
+  text: >-
+    On this issue, my partner seems willing to have conversations with individuals who hold
+    strong views opposite to their own.
+  type: likert
+  min: 1
+  max: 7
+  min_label: Strongly disagree
+  max_label: Strongly agree
+  pre: false
+  turn: true
+  post: false
+survey_instructions:
+  pre: Before the conversation begins, please answer the following questions as yourself.
+  turn: >-
+    At this moment, rate your current perceptions toward your conversation partner. Consider a
+    hypothetical future work setting when answering the questions. Use only your own
+    information and the conversation available so far. If your partner has not spoken yet,
+    report your initial expectations; do not invent evidence about that person.
+  post: The conversation has ended. Thinking about the whole conversation, please
+    answer the following questions as yourself.
+prompt_templates: {}
