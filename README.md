@@ -31,8 +31,7 @@ while the same server is running. Free hosting can sleep or be unavailable.
 
 Real models may charge your provider account. Keys pass through the hosting
 server and remain temporary; they are excluded from saved setups, outputs and
-logs. Please use only the API-key fields. Mock workflows have been tested; one
-small OpenAI test passed. Other real-provider combinations remain unverified.
+logs. Please use only the API-key fields. Mock workflows have been tested.
 
 ## Run on your own computer
 
