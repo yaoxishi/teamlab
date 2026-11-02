@@ -1,4 +1,4 @@
-"""TeamLab's single-page Streamlit interface; research logic is in convolab."""
+"""TeamLab's single-page Streamlit interface; research logic is in teamlab."""
 from pathlib import Path
 
 import altair as alt
@@ -6,16 +6,16 @@ import pandas as pd
 import streamlit as st
 from streamlit.runtime.scriptrunner_utils.exceptions import ScriptControlException
 
-from convolab.config import (BIG_FIVE_FIELDS, ConfigError, DEMOGRAPHIC_FIELDS, ITEM_COLUMNS,
+from teamlab.config import (BIG_FIVE_FIELDS, ConfigError, DEMOGRAPHIC_FIELDS, ITEM_COLUMNS,
                              PERSONA_COLUMNS, SURVEY_INSTRUCTIONS, dump_study_yaml)
-from convolab.desktop import (DesktopSession, EXAMPLES, app_output_root, builtin_bytes, builtin_choices,
+from teamlab.desktop import (DesktopSession, EXAMPLES, app_output_root, builtin_bytes, builtin_choices,
                              clean_grid, estimate_calls, live_transcript_text, preview_prompts, questionnaire_input,
                              progress_label, safe_study_download, table_csv)
-from convolab.llm import Redactor, format_error
-from convolab.prompts import ALLOWLISTS, DEFAULTS
-from convolab.presentation import introduction, apply_style, study_setup_heading
-from convolab.questionnaire_ui import questionnaire_editor
-from convolab.results import (ResultsError, chart_data, measurement_view, open_results,
+from teamlab.llm import Redactor, format_error
+from teamlab.prompts import ALLOWLISTS, DEFAULTS
+from teamlab.presentation import introduction, apply_style, study_setup_heading
+from teamlab.questionnaire_ui import questionnaire_editor
+from teamlab.results import (ResultsError, chart_data, measurement_view, open_results,
                              saved_folders, state_view, transcript_view)
 
 OUTPUT_ROOT = app_output_root(__file__)

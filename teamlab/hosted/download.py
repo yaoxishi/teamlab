@@ -9,7 +9,7 @@ from .settings import HostedError
 @lru_cache(maxsize=1)
 def download_renderer():
     import streamlit as st
-    root=files('convolab.hosted').joinpath('assets')
+    root=files('teamlab.hosted').joinpath('assets')
     js=root.joinpath('download.js').read_bytes()
     expected=json.loads(root.joinpath('download-manifest.json').read_text())
     if hashlib.sha256(js).hexdigest()!=expected.get('sha256'):

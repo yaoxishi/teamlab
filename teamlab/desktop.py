@@ -54,7 +54,7 @@ def table_csv(rows, columns):
 
 def builtin_bytes():
     load_builtin_personas()  # Verify bytes before offering a download.
-    return files("convolab").joinpath("data", "anes2016_personas.csv").read_bytes()
+    return files("teamlab").joinpath("data", "anes2016_personas.csv").read_bytes()
 
 
 def builtin_choices(search=""):
@@ -185,7 +185,7 @@ class DesktopSession:
         self.replace_yaml(decode_upload(data))
 
     def load_example(self, label):
-        self.replace_yaml(files("convolab").joinpath("data", "examples", EXAMPLES[label]).read_text(encoding="utf-8"))
+        self.replace_yaml(files("teamlab").joinpath("example_studies", EXAMPLES[label]).read_text(encoding="utf-8"))
 
     def import_personas(self, data, filename):
         self.check_editable()

@@ -5,6 +5,16 @@ Streamlit Community Cloud, Supabase and Cloudflare Turnstile configuration.
 Publishing this source alone does not configure those services. The existing
 TeamLab website already has them; do not reapply its database setup.
 
+| Location | Purpose |
+| --- | --- |
+| [HOSTED_SETTINGS.example.toml](HOSTED_SETTINGS.example.toml) | Placeholder settings for the website; enter real values only in private service settings. |
+| `supabase/` | Numbered database setup files and function authentication configuration. |
+| `functions/private-download/` | Ownership- and expiry-checked ZIP downloads. |
+| `functions/cleanup/` | Scheduled removal of expired data and eligible inactive identities. |
+
+The retained `CONVOLAB_*` service names are explained in the
+[developer guide](../docs/DEVELOPMENT.md#existing-hosting-identifiers).
+
 ## Set up the services
 
 1. Create a dedicated Supabase project. Apply the four SQL files in
@@ -23,7 +33,7 @@ TeamLab website already has them; do not reapply its database setup.
    set a separate random `CONVOLAB_CLEANUP_SECRET` of at least 32 letters/digits.
    Supabase supplies each function's `SUPABASE_URL`.
 5. Deploy `hosted_app.py` with Python 3.12 on Streamlit Community Cloud. Enter
-   the values named in `deploy/STAGING_SETTINGS.example.toml` directly into
+   the values named in `deploy/HOSTED_SETTINGS.example.toml` directly into
    Streamlit's private Secrets settings. Keep both enable flags at `"0"`
    while setting up. The internal `CONVOLAB_` names remain intentional.
 

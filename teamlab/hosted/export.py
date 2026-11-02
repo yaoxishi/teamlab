@@ -4,14 +4,14 @@ import hashlib
 from importlib.resources import files
 import json
 
-from convolab.llm import Redactor
+from teamlab.llm import Redactor
 from .auth import VerifiedIdentity
 from .settings import HostedError
 from .limits import MAX_BUNDLE_BYTES
 
 def export_renderer():
     import streamlit as st
-    root=files('convolab.hosted').joinpath('assets')
+    root=files('teamlab.hosted').joinpath('assets')
     js=root.joinpath('export.js').read_bytes()
     manifest=json.loads(root.joinpath('export-manifest.json').read_text())
     if manifest != {'version':1,'sha256':hashlib.sha256(js).hexdigest()}:

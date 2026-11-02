@@ -1,7 +1,7 @@
 # Built-in ANES-derived data
 
 The MIT license applies to TeamLab's code and project documentation. It does
-not license `convolab/data/anes2016_personas.csv` or the underlying ANES data.
+not license `teamlab/data/anes2016_personas.csv` or the underlying ANES data.
 Third-party libraries and browser assets retain their own terms.
 
 The combined package declares `MIT AND LicenseRef-ANES-Conditions` so packaging

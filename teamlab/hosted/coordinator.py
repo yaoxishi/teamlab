@@ -11,8 +11,8 @@ import weakref
 import httpx
 from pydantic import SecretStr
 
-from convolab.llm import AbortSignal, CancelledWork, error_details, model_attempt, format_error
-from convolab.simulation import run_study
+from teamlab.llm import AbortSignal, CancelledWork, error_details, model_attempt, format_error
+from teamlab.simulation import run_study
 from .admission import Lease
 from .auth import VerifiedIdentity, canonical_uuid
 from .limits import BoundedOutputStore, MAX_EXECUTION_SECONDS, check_study

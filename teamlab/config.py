@@ -727,7 +727,7 @@ def read_import(path: str | Path) -> bytes:
 @lru_cache(maxsize=1)
 def load_builtin_personas() -> tuple[Persona, ...]:
     try:
-        data = resources.files("convolab").joinpath("data", BUILTIN_DATASET_FILE).read_bytes()
+        data = resources.files("teamlab").joinpath("data", BUILTIN_DATASET_FILE).read_bytes()
     except (OSError, FileNotFoundError):
         raise DatasetError(f"The built-in file {BUILTIN_DATASET_FILE} is missing or unreadable. Reinstall the application data before starting.") from None
     if hashlib.sha256(data).hexdigest() != BUILTIN_DATASET_SHA256:

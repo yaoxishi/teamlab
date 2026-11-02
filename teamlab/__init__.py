@@ -1,4 +1,3 @@
-"""TeamLab public entry point with compatible existing engine."""
-from convolab import __version__
+"""TeamLab: staged implementation of build specification 10.5."""
 
-__all__ = ["__version__"]
+__version__ = "0.2.0"

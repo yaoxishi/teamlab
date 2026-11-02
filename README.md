@@ -12,8 +12,9 @@ Open **[TeamLab](https://teamlab-prototype.streamlit.app/?embed=true)**. No inst
 
 1. Click **Connect private workspace** and wait for the connected message.
 2. Create a study, import a saved YAML setup, or load an example:
-   **Custom hidden-profile study**, **Opposing view (receptive)** or
-   **Opposing view (control)**.
+   **[Custom hidden-profile study](teamlab/example_studies/hidden_profile_study.yaml)**,
+   **[Opposing view (receptive)](teamlab/example_studies/opposing_view_receptive.yaml)** or
+   **[Opposing view (control)](teamlab/example_studies/opposing_view_control.yaml)**.
 3. Review the settings and preview the prompts. Click **Run with mock models**
    to try the workflow without an API key or model charges. For real models,
    choose a model for each agent, enter your provider keys and click **Start**.
@@ -52,6 +53,24 @@ The local app keeps results in `outputs/` until you remove them.
 Keep the bundled CSV and dependency locks
 unchanged. Hosting your own shared website also requires the
 [service setup](deploy/README.md).
+
+## Example studies and source files
+
+The three ready-to-use YAML files are in **[teamlab/example_studies](teamlab/example_studies/)**.
+Copy one to create your own study, then import your copy in the app. All supplied
+examples use mock models and need no API key. The folder's guide explains each
+example and how to edit it.
+
+| Location | What it contains |
+| --- | --- |
+| `app.py` / `hosted_app.py` | Local / shared-website entry points |
+| `teamlab/` | Study validation, prompts, simulation, questionnaires and results |
+| `teamlab/example_studies/` | The three example study setups |
+| `teamlab/data/` | Built-in persona CSV; preserve its original bytes |
+| `teamlab/hosted/` / `deploy/` | Private-workspace website code / hosting setup |
+
+See the short **[guide to changing TeamLab](docs/DEVELOPMENT.md)** for where to
+make changes, Python imports and compatibility notes.
 
 ## License and data
 

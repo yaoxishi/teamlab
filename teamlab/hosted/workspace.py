@@ -6,11 +6,11 @@ import threading
 
 from pydantic import SecretStr
 
-from convolab.config import (ConfigError, StudyEditor, dump_study_yaml, load_study_yaml,
+from teamlab.config import (ConfigError, StudyEditor, dump_study_yaml, load_study_yaml,
                             import_personas, import_items, study_to_dict, validate_study)
-from convolab.desktop import blank_editor, decode_upload, EXAMPLES
+from teamlab.desktop import blank_editor, decode_upload, EXAMPLES
 from importlib.resources import files
-from convolab.llm import Redactor
+from teamlab.llm import Redactor
 from .auth import VerifiedIdentity
 from .policy import freeze_hosted_inputs, validate_hosted_policy
 from .settings import HostedError
@@ -133,7 +133,7 @@ class HostedWorkspace:
     def load_example(self, identity, label):
         if label not in EXAMPLES:
             raise ConfigError('Choose a supplied example study.')
-        self.replace_yaml(identity, files('convolab').joinpath('data', 'examples', EXAMPLES[label]).read_text(encoding='utf-8'))
+        self.replace_yaml(identity, files('teamlab').joinpath('example_studies', EXAMPLES[label]).read_text(encoding='utf-8'))
 
     @_synchronized
     def replace_upload(self, identity, data):

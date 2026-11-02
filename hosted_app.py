@@ -1,11 +1,11 @@
 """TeamLab prototype UI with private browser workspaces."""
 import os
 import streamlit as st
-from convolab.presentation import apply_style
-from convolab.hosted import auth,component,runtime
-from convolab.hosted.interface import welcome,render_interface
-from convolab.hosted.settings import HostedError,HostedSettings
-from convolab.hosted.workspace import (WIDGET_PREFIX as P,bind_workspace,
+from teamlab.presentation import apply_style
+from teamlab.hosted import auth,component,runtime
+from teamlab.hosted.interface import welcome,render_interface
+from teamlab.hosted.settings import HostedError,HostedSettings
+from teamlab.hosted.workspace import (WIDGET_PREFIX as P,bind_workspace,
                                         clear_key_widgets,clear_private_state)
 
 st.set_page_config(page_title='TeamLab prototype',layout='wide')

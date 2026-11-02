@@ -1,0 +1,7 @@
+include app.py hosted_app.py
+include README.md LICENSE DATA_TERMS.md pyproject.toml
+include requirements.txt requirements.lock requirements-linux.lock constraints.txt
+include .gitattributes .gitignore .streamlit/config.toml
+recursive-include docs *.md
+recursive-include deploy *.md *.toml *.sql *.mjs *.ts
+recursive-include teamlab/example_studies *.yaml *.md

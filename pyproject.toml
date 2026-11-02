@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "teamlab"
-version = "0.1.0"
+version = "0.2.0"
 description = "Local LLM conversation research simulation"
 readme = "README.md"
 license = "MIT AND LicenseRef-ANES-Conditions"
@@ -20,10 +20,11 @@ dependencies = [
 dev = ["pytest==9.1.1"]
 
 [tool.setuptools.packages.find]
-include = ["convolab*", "grouplab*", "teamlab*"]
+include = ["teamlab", "teamlab.*"]
+namespaces = false
 
 [tool.setuptools.package-data]
-convolab = ["data/*.csv", "data/examples/*.yaml", "hosted/assets/*"]
+teamlab = ["data/*.csv", "example_studies/*.yaml", "hosted/assets/*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

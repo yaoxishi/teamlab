@@ -6,13 +6,13 @@ import altair as alt
 import pandas as pd
 import streamlit as st
 
-from convolab.config import BIG_FIVE_FIELDS, DEMOGRAPHIC_FIELDS, ITEM_COLUMNS, PERSONA_COLUMNS, SURVEY_INSTRUCTIONS, ConfigError
-from convolab.desktop import EXAMPLES,builtin_bytes,builtin_choices,clean_grid,preview_prompts,questionnaire_input,table_csv,live_transcript_text
-from convolab.llm import Redactor,validate_capabilities
-from convolab.prompts import ALLOWLISTS,DEFAULTS
-from convolab.presentation import introduction,study_setup_heading
-from convolab.questionnaire_ui import questionnaire_editor
-from convolab.results import chart_data,measurement_view,state_view,transcript_view,ResultsError
+from teamlab.config import BIG_FIVE_FIELDS, DEMOGRAPHIC_FIELDS, ITEM_COLUMNS, PERSONA_COLUMNS, SURVEY_INSTRUCTIONS, ConfigError
+from teamlab.desktop import EXAMPLES,builtin_bytes,builtin_choices,clean_grid,preview_prompts,questionnaire_input,table_csv,live_transcript_text
+from teamlab.llm import Redactor,validate_capabilities
+from teamlab.prompts import ALLOWLISTS,DEFAULTS
+from teamlab.presentation import introduction,study_setup_heading
+from teamlab.questionnaire_ui import questionnaire_editor
+from teamlab.results import chart_data,measurement_view,state_view,transcript_view,ResultsError
 from . import auth,download,repository
 from .admission import ServiceSettings
 from .checkpoints import cloud_results

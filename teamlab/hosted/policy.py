@@ -5,8 +5,8 @@ import re
 import httpx
 from pydantic import SecretStr
 
-from convolab.config import ConfigError, Study, freeze_execution, study_to_dict, validate_study
-from convolab.llm import ProviderFailure, Redactor, provider_attempt
+from teamlab.config import ConfigError, Study, freeze_execution, study_to_dict, validate_study
+from teamlab.llm import ProviderFailure, Redactor, provider_attempt
 
 
 OFFICIAL_BASES = {"openai": "https://api.openai.com/v1", "anthropic": "https://api.anthropic.com",

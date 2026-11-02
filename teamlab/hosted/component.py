@@ -9,7 +9,7 @@ from .settings import HostedError
 
 @lru_cache(maxsize=1)
 def assets():
-    root = files("convolab.hosted").joinpath("assets")
+    root = files("teamlab.hosted").joinpath("assets")
     manifest = json.loads(root.joinpath("manifest.json").read_text(encoding="utf-8"))
     if manifest.get("version") != 1 or set(manifest.get("sha256", {})) != {"auth.js", "auth.css", "auth.html"}:
         raise HostedError("The website's authentication component failed its integrity check.")

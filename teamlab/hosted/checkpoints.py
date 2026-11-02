@@ -9,10 +9,10 @@ import re
 import tempfile
 from zipfile import ZipFile, ZIP_DEFLATED, BadZipFile
 
-from convolab.outputs import native_lock, open_output, OutputError
-from convolab.results import open_results
-from convolab.llm import error_details
-from convolab.json_protocol import strict_json_loads
+from teamlab.outputs import native_lock, open_output, OutputError
+from teamlab.results import open_results
+from teamlab.llm import error_details
+from teamlab.json_protocol import strict_json_loads
 from .auth import canonical_uuid
 from .limits import BoundedOutputStore, MAX_BUNDLE_BYTES
 from .settings import HostedError

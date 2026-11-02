@@ -4,9 +4,9 @@ import io
 import json
 from pathlib import Path
 
-from convolab.desktop import estimate_calls
-from convolab.llm import error_details
-from convolab.outputs import CSV_COLUMNS, OutputError, OutputStore
+from teamlab.desktop import estimate_calls
+from teamlab.llm import error_details
+from teamlab.outputs import CSV_COLUMNS, OutputError, OutputStore
 from .settings import HostedError
 
 MAX_CALLS = 300
